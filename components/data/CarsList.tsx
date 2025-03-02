@@ -1,0 +1,20 @@
+export default[
+    {
+        id:1,
+        name:'Economy',
+        image:'/eco.jpg',
+        charges:1
+    },
+    {
+        id:2,
+        name:'Minivan',
+        image:'/min.jpeg',
+        charges:1.2
+    },
+    {
+        id:3,
+        name:'Comfort',
+        image:'/comf.jpg',
+        charges:1.5
+    },
+];
