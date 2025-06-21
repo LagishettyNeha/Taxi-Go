@@ -1,10 +1,10 @@
 
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import NavBar from "@/components/NavBar";
-
+import NavBarWrapper from "@/components/NavBarWrapper"; // Import the wrapper
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,18 +25,16 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>
-) {
- 
+}>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-       <NavBar/>
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <NavBarWrapper /> {/* ✅ NavBar is now controlled in a client component */}
+          {children}
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
+
